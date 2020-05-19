@@ -1,0 +1,26 @@
+<% if(locals.user) {%>
+    <section id="comment">
+        <form action="/comments/create-comment" id="comment-form" method="POST">
+    <textarea name="comment" id="new-post" cols="30" rows="2"></textarea>
+    <input type="hidden" name="post" value="<%=post._id%>">
+    <input type="submit" >
+    
+        </form>
+    </section>
+
+    <section id="Comments-container-<%=post._id%>">
+        <% for (comment of post.comment) {%>
+           
+            <ul id="comments">
+                <li><p><%=comment.content%>
+                    <%if(locals.user && locals.user.id==comment.user.id) {%>
+                        <a href="/comments/delete/<%=comment._id%>">x</a>
+                             <%}%>  
+                    <br><%=comment.user.name%></p></li>
+           
+            </ul>
+            
+            <%}%>
+        
+    </section>
+    <%}%>

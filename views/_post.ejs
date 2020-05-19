@@ -1,0 +1,12 @@
+<ul id="post">
+    
+         <li><p><%=post.user.name%>
+            <%if(locals.user && locals.user.id==post.user.id) {%>
+                <a href="/posts/delete/<%=post._id%>">x</a>
+                     <%}%>
+            <br><%=post.content%></p>
+            </li>
+          
+</ul>
+      
+    <%-include('_comment')-%>

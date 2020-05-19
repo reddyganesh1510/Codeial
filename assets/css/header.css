@@ -1,0 +1,16 @@
+header {
+  margin: 0;
+  color: blanchedalmond;
+  background-color: black;
+  width: 100vw;
+  height: 7vh;
+  text-align: center; }
+  header h1 {
+    display: inline-block;
+    margin: 0; }
+  header ul {
+    list-style: none;
+    display: inline-block; }
+    header ul li {
+      font-family: candara;
+      display: inline-block; }
