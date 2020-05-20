@@ -16,9 +16,14 @@
 <section id="display-post">
     <%for(post of posts){%>
         <%-include('_post')-%>
-    
-        <%}%>
+    <%}%>
 </section> 
+
+<section id="friends-list">
+    <% for(u of users_list) {%>
+        <p><a href="/users/profile/<%=u._id%>"><%=u.name%></a></p>
+        <%}%>
+</section>
 
 
     

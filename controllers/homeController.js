@@ -1,4 +1,5 @@
 const Post = require('../models/post')
+const User = require('../models/user')
 // module.exports.home = function(req,res){
 //  Post.find({},function(err,posts){
 //      if(err){
@@ -25,10 +26,18 @@ const Post = require('../models/post')
         console.log(`error in finding posts ${err}`);
         return;
     }
-    return res.render('home',{
-        title:"home",
-        posts:posts,
+    User.find({},function(err,users){
+        if(err){
+            console.log(`error in finding users ${err}`);
+        return;
+        } return res.render('home',{
+            title:"home",
+            posts:posts,
+            users_list:users
+        })
     })
+
+   
  })
 }
 
