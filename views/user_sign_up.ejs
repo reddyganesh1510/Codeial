@@ -1,14 +1,20 @@
-    <h1>Sign up</h1>
+    
 
-    <form action="/users/create" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="password" name="password" placeholder="Your password" required>
-        <input type="password" name="confirm_password" placeholder="Your password" required>
-
-        <input type="submit" value="Sign Up">
-
-
-
-
-    </form>
+<link rel="stylesheet" href="/css/signup.css">
+<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+<div id="main">
+    <div id="login-container">
+        <div id="heading" class="flex-center"><h2>SIGN UP</h2></div>
+        <div id="form">
+            <form action="/users/create" method="POST" class="flex-center">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm password" required>
+        
+               <button type="submit" class="button">Sign Up</button>
+            </form> 
+        </div>
+        
+        
+    </div>    

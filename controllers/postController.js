@@ -16,19 +16,17 @@ module.exports.createPost = function(req,res){
     
 }
 
-module.exports.destroyPost = function(req,res){
-    Post.findById(req.params.id,function(err,post){
-        if(post.user==req.user.id){
-            post.remove();
-            Comment.deleteMany({post:req.params.id},function(err){
-                if(err){
-                    console.log(`Error in deleting comment ${err}`)
-                }
-                return res.redirect('back')
-            })
-        }else{
+module.exports.destroyPost = async function(req,res){
+   try {
+    let post = await Post.findById(req.params.id)
+    if(post.user==req.user.id){
+        post.remove();
+        await Comment.deleteMany({post:req.params.id})
             return res.redirect('back')
-        }
-    })
+    }
+   } catch (error) {
+       console.log(error);
+   }
+   
 }
 

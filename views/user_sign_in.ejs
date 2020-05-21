@@ -1,11 +1,20 @@
-    <h1>Sign in</h1>
-    <link rel="stylesheet" href="/css/signin.css    ">
-    <form action="/users/createSession" method="POST">
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="password" name="password" placeholder="Your password" required>
-        <input type="submit" value="Sign In">
+<link rel="stylesheet" href="/css/login.css">
+<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+<div id="main">
+    <div id="login-container">
+        <div id="heading" class="flex-center"><h2>SIGN IN</h2></div>
+        <div id="form">
+            <form action="/users/createSession" method="POST" class="flex-center">
+              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="password" name="password" placeholder="Your password" required>
+               <button type="submit" class="button">Login</button>
+            </form> 
+        </div>
+        <div id="sign-up">
+            <p>Not a user</p>
+            <a href="/users/sign-up">Sign up</a>
+        </div>
+        
+    </div>    
+</div>
 
-
-
-
-    </form>

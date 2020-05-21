@@ -1,26 +1,41 @@
 header{
-    margin: 0;
-    color: blanchedalmond;
-    background-color: black;
-    width: 100vw;
-    height: 7vh;
-    text-align: center;
+    width: 100vw;;
+    height: 8vh;
     
-    
-    h1{
-        display: inline-block;
-        margin: 0;
-        
+    a{
+        text-decoration: none;
     }
-    ul{
-        list-style: none;
-        display: inline-block;
-        li{ 
-            font-family: candara;
-            display: inline-block;
+    a:link,a:visited,p{
+        color: wheat ;
+        font-family: Flamenco;
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-
+    justify-content: space-between;
+    #heading{
+        margin-left: 4%;
+        margin-top: 1%;
+        p{
+            margin: 0;
+            font-size: 2.4rem;
 
         }
+
+    }
+    #header-nav{
+        
+        margin-right: 5%;
+        ul{
+           
+            li{
+                font-size: 1.5em;
+                display: inline-block;
+                margin: 0 25px 0px 0;
+                
+            }
+        }
+
     }
 }

@@ -4,10 +4,11 @@ console.log(`router`)
 router.use('/users',require('./users'));
 router.use('/posts',require('./post'));
 router.use('/comments',require('./comment'));
+const passport = require('passport')
 
 
 
 const homeController = require('../controllers/homeController')
-router.get('/',homeController.home);
+router.get('/',passport.checkAuthentication,homeController.home);
 
 module.exports = router;
