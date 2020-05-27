@@ -1,3 +1,32 @@
-body{
-    background-color:dimgray;
+#friends-list{
+    width: 25vw;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1em;
+    
+
+}
+
+#display-post{
+    width: 50vw;
+    display: inline-block;
+    padding: 1em;
+   #new-post{
+    width: 90%;
+    height: 15%;
+    padding: 1em;;
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+   }
+}
+
+#post-container{
+    width: 50vw;
+    background-color: blue;
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
 }

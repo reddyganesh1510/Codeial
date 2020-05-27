@@ -1,7 +1,7 @@
 <% if(locals.user) {%>
     <section id="comment">
         <form action="/comments/create-comment" id="comment-form" method="POST">
-    <textarea name="comment" id="new-post" cols="30" rows="2"></textarea>
+    <textarea name="comment" id="new-comment" cols="30" rows="2"></textarea>
     <input type="hidden" name="post" value="<%=post._id%>">
     <input type="submit" >
     

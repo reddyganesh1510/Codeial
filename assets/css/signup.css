@@ -8,8 +8,8 @@
   #main p {
     margin: 0; }
   #main #login-container {
-    height: 60%;
-    width: 25%;
+    height: 65%;
+    width: 20%;
     background-color: whitesmoke;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19); }
     #main #login-container #heading {
@@ -28,7 +28,7 @@
         #main #login-container #form form input {
           width: 80%;
           padding: 2.5%;
-          margin-bottom: 5%;
+          margin-bottom: 8%;
           font-size: 1.2em;
           background-color: transparent;
           border: 1px solid black;

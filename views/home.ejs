@@ -1,29 +1,29 @@
 <link rel="stylesheet" href="/css/home.css">
 
-<h1>Home</h1>
-<% if(locals.user) {%>
-    <section id="post">
-        <form action="/posts/create-post" id="post-form" method="POST">
-    <textarea name="content" id="new-post" cols="30" rows="3"></textarea>
-    <input type="submit">
-    
-        </form>
-    </section>
-    <%}%>
-
-
-
-<section id="display-post">
-    <%for(post of posts){%>
-        <%-include('_post')-%>
-    <%}%>
-</section> 
 
 <section id="friends-list">
+    <p>Friends</p>
     <% for(u of users_list) {%>
         <p><a href="/users/profile/<%=u._id%>"><%=u.name%></a></p>
         <%}%>
 </section>
 
 
-    
+<div id="display-post">
+    <p>New post</p>
+    <% if(locals.user) {%>
+        <section id="post">
+            <form action="/posts/create-post" id="post-form" method="POST">
+        <textarea name="content" id="new-post" cols="30" rows="3"></textarea>
+        <input type="submit">
+        
+            </form>
+        </section>
+        <%}%>
+    <div id="post-container">
+        <%for(post of posts){%>
+            <%-include('_post')-%>
+        <%}%>
+    </div>
+    </div> 
+    <script src="./home.js"></script> 

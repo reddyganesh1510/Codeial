@@ -1,12 +1,9 @@
-<ul id="post">
-    
-         <li><p><%=post.user.name%>
-            <%if(locals.user && locals.user.id==post.user.id) {%>
-                <a href="/posts/delete/<%=post._id%>">x</a>
-                     <%}%>
-            <br><%=post.content%></p>
-            </li>
-          
-</ul>
+
+          <div id="heading"><p><%=post.user.name%><%if(locals.user && locals.user.id==post.user.id) {%>
+            <a href="/posts/delete/<%=post._id%>">x</a>
+                 <%}%></p></div>
+          <div id="post"><p><%=post.content%></p></div>
+          <div id="comments"> <%-include('_comment')-%></div>
+
       
-    <%-include('_comment')-%>
+   
