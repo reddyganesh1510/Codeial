@@ -1,9 +1,35 @@
 
+        <div id="post-<%=post._id%>" class="postx">
           <div id="heading"><p><%=post.user.name%><%if(locals.user && locals.user.id==post.user.id) {%>
-            <a href="/posts/delete/<%=post._id%>">x</a>
+            <a class="delete-post-button" href="/posts/delete/<%=post._id%>">x</a>
                  <%}%></p></div>
           <div id="post"><p><%=post.content%></p></div>
-          <div id="comments"> <%-include('_comment')-%></div>
+          <div id="comment-section"></div>
+            <% if(locals.user) {%>
+              <section id="comment-section">
+                  <form action="/comments/create-comment" id="comment-form-<%=post._id%>" class="comment-form-class" method="POST">
+              <textarea name="comment" id="new-comment" cols="30" rows="2"></textarea>
+              <input type="hidden" name="post" value="<%=post._id%>">
+              <input type="submit" >
+              
+                  </form>
+             
+        <%}%> 
+        <div id="comments-container-<%=post._id%>">
+         
+            <% for (comment of post.comment) {%>
+              <%-include('_comment')-%>
+           <%}%>
+        
+
+         
+
+       
+        </div>
+    </section>
+        
+      </div>
+        
 
       
    

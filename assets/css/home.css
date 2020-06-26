@@ -18,8 +18,13 @@
 
 #post-container {
   width: 50vw;
-  background-color: blue; }
-  #post-container ul {
-    margin: 0;
-    padding: 0;
-    list-style: none; }
+  height: 80vh;
+  overflow-y: scroll; }
+
+#post-container::-webkit-scrollbar {
+  display: none; }
+
+p {
+  color: wheat;
+  font-family: candara;
+  font-size: 1.2em; }

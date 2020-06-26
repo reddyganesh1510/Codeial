@@ -12,6 +12,19 @@ module.exports.createComment = async function(req,res){
                         }) 
                     post.comment.push(comment);
                     post.save()
+
+                    comment = await Comment.findById({_id:comment.id}).populate('user');
+
+                    if(req.xhr){
+                        return res.status(200).json({
+                            data:{
+                                comment : comment
+                            },
+                            message : "Comment added"
+                        })
+
+                    }
+                   
                     res.redirect('back')
                 
             }
@@ -27,6 +40,15 @@ module.exports.destroyComment= function(req,res){
             let postId = comment.post
             comment.remove();
             Post.findByIdAndUpdate(postId,{$pull:{comment:req.params.id}});
+            if(req.xhr){
+                return res.status(200).json({
+                    data:{
+                        comment_id:req.params.id
+                    },
+                    message:"Comment deleted"
+                })
+            }
+    
             return res.redirect('back');
         }
         return res.redirect('back');
